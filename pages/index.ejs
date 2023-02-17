@@ -17,7 +17,7 @@
         <div class="alert alert-success">Note has been created!</div>
         <% } %>
 
-        <div class="container">
+        <div class="container mt-2">
             <h1><%= title %></h1>
 
             <form action="/" method="post" class="mb-2">
@@ -40,14 +40,23 @@
                     <li
                         class="list-group-item d-flex justify-content-between align-items-center"
                     >
-                        <%= note.title %>
-                        <button
-                            class="btn btn-danger"
-                            data-type="remove"
-                            data-id="<%= note.id %>"
-                        >
-                            &times;
-                        </button>
+                        <div class="title"><%= note.title %></div>
+                        <div class="">
+                            <button
+                                class="btn btn-primary"
+                                data-type="edit"
+                                data-id="<%= note.id %>"
+                            >
+                                Редактировать
+                            </button>
+                            <button
+                                class="btn btn-danger"
+                                data-type="remove"
+                                data-id="<%= note.id %>"
+                            >
+                                &times;
+                            </button>
+                        </div>
                     </li>
                     <% } %>
                 </ul>
